@@ -1,0 +1,160 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+}
+
+body {
+    background-color: bisque;
+
+}
+
+a {
+    text-decoration: none;
+}
+
+h1 {
+    text-shadow: 10px 7px 7px rgb(77, 77, 77);
+
+}
+
+
+.mainContainer {
+    width: 794px;
+    min-height: 500px;
+    max-height: 1123px;
+    border: 3px solid;
+    margin: 50px auto;
+    background-color: rgba(255, 255, 255, 0.986);
+    box-shadow: 0px 10px 10px 0px rgba(134, 134, 134);
+    padding: 20px 15px;
+}
+
+.header {
+    width: 100%;
+    height: 220px;
+    display: flex;
+
+}
+
+.general {
+    background-color: rgb(182, 180, 180);
+    height: 100%;
+    padding: 5px 5px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-radius: 7px;
+
+}
+
+.foto {
+    border: 4px solid rgba(255, 187, 0);
+    border-radius: 50%;
+    width: 180px;
+    height: 180px;
+    margin-left: 0px;
+    margin-right: 18px;
+    margin-top: 20px;
+}
+
+.contant {
+    width: 100%;
+    min-height: 300px;
+    margin-top: 10px;
+    display: flex;
+}
+
+.leftbar {
+    width: 200px;
+    min-height: 100%;
+}
+
+.worklife {
+    border: 1px solid;
+    min-height: 300px;
+    flex: 1;
+
+}
+
+.contact {
+    border-bottom: 1px solid rgb(226, 225, 225);
+    padding-bottom: 2px;
+    padding-top: 3px;
+    width: 180px;
+    text-align: center;
+}
+
+.contact a {
+    font-size: 15px;
+    color: rgb(77, 77, 77);
+}
+
+
+.contact i {
+    color: rgb(77, 77, 77);
+
+}
+
+#linkedin {
+    color: #0072b1;
+}
+
+#github {
+    color: black;
+}
+
+#mail {
+    color: #c71610;
+}
+
+#phone {
+    color: black;
+}
+
+#map {
+    color: #08851b;
+
+}
+
+.LeftSkills {
+    font-size: 16px;
+    margin: 20px 0px;
+    border-bottom: 1px solid;
+    padding-bottom: 5px;
+    text-align: center;
+    width: 180px;
+}
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    font-weight: bold;
+}
+
+.skillBox {
+    background-color: #ccc;
+    color: black;
+    padding: 5px 10px;
+    border-radius: 8px;
+
+}
+
+.Languages {
+    font-size: 15px;
+    color: black;
+    text-align: center;
+    font-weight: bold;
+}
+
+.Level {
+    font-size: 15px;
+    color: rgb(77, 77, 77);
+    font-style: italic;
+    text-align: center;
+    padding-bottom: 5px;
+}
