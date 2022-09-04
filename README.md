@@ -1,11 +1,17 @@
 # cv
 
-<h1> Proje tamamlandı.</h1>
+<h1> Online yayınlanabilir statik Cv</h1>
 
-<h2> Profil resmine hover transform eklendi.</h2>
+<p> Bir CV de olması gereken her şey eklenerek yayınlanabilir bir website olarak tasarlanmıştır.</p>
 
-<h3> header bölgesine Lianer gradient eklendi.</h3>
+<p> Font Awesome kütüphasinden yararlanılarak çeşitli iconlar eklenmiştir.</p>
 
-<h4> ekran gifi eklendi </h4>
+<p> İletişim bölümünde tıklandığı zaman direkt mail gönderimi ve telefon araması yönlendirme yöntenmi kullanılmıştır.</p>
+
+<p> JavaScprit kullanılarak yazdırma, pdf olarak kaydetme butonları yapılmıştır. </p>
+
+<p> Bir sözlük oluşturularak JavaScprit fonksiyonlarıyla CV yi TR-ENG selectionlar eklenerek dil değişimi sağlanmıştır.</p>
+
+<h4> ekran gifi ön görsel olarak yüklenmiştir. </h4>
 
 ![](preview.gif)

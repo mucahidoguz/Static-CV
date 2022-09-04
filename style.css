@@ -8,12 +8,10 @@
     padding: 0;
     box-sizing: border-box;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-
 }
 
 body {
     background-color: bisque;
-
 }
 
 a {
@@ -22,15 +20,54 @@ a {
 
 h1 {
     text-shadow: 10px 7px 7px rgb(77, 77, 77);
-
 }
 
+.topContainer {
+    margin: auto;
+    margin-top: 20px;
+    width: 794px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+}
+
+#language {
+padding: 0px 30px;
+border-radius: 7px;
+}
+
+#pdfBtn {
+padding: 5px 30px;
+background-color: rgb(235, 19, 19);
+border: none;
+border-radius: 7px;
+color: #ffff;
+cursor: pointer;
+}
+
+#pdfBtn:hover {
+background-color: #ffff;
+color: black;
+}
+
+#prtBtn {
+    padding: 5px 20px;
+    background-color: rgb(0, 8, 1);
+    border: none;
+    border-radius: 7px;
+    color: #ffff;
+    cursor: pointer;
+}
+
+#prtBtn:hover {
+    background-color: #ffff;
+    color: black;
+    }
 
 .mainContainer {
     width: 794px;
     min-height: 500px;
     max-height: 1123px;
-    border: 3px solid;
     margin: 50px auto;
     background-color: rgba(255, 255, 255, 0.986);
     box-shadow: 0px 10px 10px 0px rgba(134, 134, 134);
@@ -168,13 +205,9 @@ h1 {
 }
 
 .textLogo {
-display: flex;
-padding: 0px 0px;
-margin: 0px 0px;
-
-}
-
-.textLogo i {
+    display: flex;
+    padding: 0px 0px;
+    margin: 0px 0px;
 
 }
 
@@ -183,7 +216,7 @@ margin: 0px 0px;
     margin: 5px 5px;
     border-bottom: 1px solid;
     padding-bottom: 5px;
-    width: 100px;
+    width: 150px;
 }
 
 .lisans {
@@ -193,7 +226,7 @@ margin: 0px 0px;
 
 .episode {
     margin: 0px 10px;
-    font-size: 17x;
+    font-size: 12px;
 }
 
 .year {
@@ -202,6 +235,29 @@ margin: 0px 0px;
 }
 
 .onlisans {
+    margin: 0px 10px;
+    font-size: 20px;
+}
+
+.lisans {
+    margin: 0px 10px;
+    font-size: 20px;
+}
+
+.workContainer {
+    border-left: 4px solid #c71610;
+    margin-top: 40px;
+}
+
+.workLife {
+    font-size: 25px;
+    margin: 5px 5px;
+    border-bottom: 1px solid;
+    padding-bottom: 5px;
+    width: 150px;
+}
+
+.Arabule2 {
     margin: 0px 10px;
     font-size: 20px;
 }
@@ -216,7 +272,7 @@ margin: 0px 0px;
     margin: 5px 5px;
     border-bottom: 1px solid;
     padding-bottom: 5px;
-    width: 130px;
+    width: 150px;
 }
 
 .boostrap {

@@ -10,19 +10,33 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
         integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
+        integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+        </script>
+    <!-- Dil değişimi için ayrı bir JS dosyasında sözlük tanımladık.  -->
+    <script type="module" src="./languages.js"></script>
 </head>
 
 <body>
-    <!-- Bu bir Açıklama satırı  -->
-    <div class="mainContainer">
+    <div class="topContainer">
+
+        <button onclick="print_current_page()" id="prtBtn">Sayfayı Yazdır</button>
+        <button id="pdfBtn">PDF İndir</button>
+        <select id="language">
+            <option value="tr" selected>TR</option>
+            <option value="en">ENG</option>
+        </select>
+    </div>
+    <div class="mainContainer" id="myCv">
         <div class="header">
             <div class="image">
                 <img class="foto" src="Profile.jpg" alt="">
             </div>
             <div class="general">
                 <h1>Mücahid OĞUZ</h1>
-                <h4>Frontend Developer</h4>
-                <p> 33 Yaşında evli ve 2 çocuk babasıyım. 12 yıllık genel muhasebe geçmişim var.
+                <h4 id="job">Frontend Developer</h4>
+                <p id="personelInfo"> 33 Yaşında evli ve 2 çocuk babasıyım. 12 yıllık genel muhasebe geçmişim var.
                     Mayıs 2022 den bu yana da IT alanında kendimi yetiştiriyorum. Bu alanda uluslararası bir kurumdan
                     alınmış sertifikalı eğitimim var. Kurs sürecinde <b>HTML5,CCS3,JavaScprit,React,Redux</b>
                     eğitimlerini tamamladım. Öğrenmeye ve gelişime açık bir kişiliğim vardır.
@@ -32,6 +46,8 @@
             </div>
         </div>
         <div class="contant">
+
+            <!-- left Side Başlangıç -->
             <div class="leftbar">
                 <div class="contact">
                     <div><i id="mail" class="fa-solid fa-envelope"></i></div>
@@ -56,7 +72,7 @@
                     <div> <a target="_blank" href="https://github.com/mucahidoguz">GitHub</a> </div>
                 </div>
 
-                <h3 class="LeftSkills">YETENEKLER</h3>
+                <h3 class="LeftSkills" id="skillsJob">YETENEKLER</h3>
                 <div class="skills">
                     <p class="skillBox">HTML5</p>
                     <p class="skillBox">CSS3</p>
@@ -69,82 +85,96 @@
                     <p class="skillBox">Eta SQL V8</p>
                 </div>
 
-                <h3 class="LeftSkills">YABANCI DİLLER</h3>
+                <h3 class="LeftSkills" id="foreignLanguages">YABANCI DİLLER</h3>
                 <div class="LanguagesContainer">
-                    <p class="Languages">Türkçe</p>
-                    <p class="Level">Ana Dil</p>
+                    <p class="Languages" id="turkish">Türkçe</p>
+                    <p class="Level" id="motherTongue">Ana Dil</p>
                 </div>
                 <div class="LanguagesContainer">
-                    <p class="Languages">İngilizce</p>
-                    <p class="Level">Başlangıç</p>
+                    <p class="Languages" id="english">İngilizce</p>
+                    <p class="Level" id="beginning">Başlangıç</p>
                 </div>
                 <div class="LanguagesContainer">
-                    <p class="Languages">Arapça</p>
-                    <p class="Level">Başlangıç</p>
+                    <p class="Languages" id="arabic">Arapça</p>
+                    <p class="Level" id="beginning">Başlangıç</p>
                 </div>
             </div>
+            <!-- left Side Bitiş -->
+
             <div class="worklife">
                 <div class="educationContainer">
                     <div class="textLogo">
-                        <h2 class="education">EĞİTİM </h2>
+                        <h2 class="education" id="egitim">EĞİTİM </h2>
                         <i id="education" class="fa-solid fa-graduation-cap fa-2x"></i>
                     </div>
-                    <h2 class="lisans">Anadolu Üniversitesi</h2>
-                    <h3 class="episode">Kamu Yönetimi</h3>
+                    <h2 class="lisans" id="university">Anadolu Üniversitesi</h2>
+                    <h3 class="episode" id="publicAdministration">Kamu Yönetimi</h3>
                     <p class="year">2010-2016</p>
                 </div>
 
                 <div class="educationContainer">
-                    <h2 class="onlisans">Anadolu Üniversitesi</h2>
-                    <h3 class="episode">İlahiyat</h3>
+                    <h2 class="onlisans" id="university">Anadolu Üniversitesi</h2>
+                    <h3 class="episode" id="theology">İlahiyat</h3>
                     <p class="year">2008-2010</p>
                 </div>
 
+                <div class="workContainer">
+                    <div class="company">
+                        <div class="textLogo">
+                            <h2 class="workLife" id="experience">DENEYİM</h2>
+                            <i id="workLife" class="fa-solid fa-briefcase fa-2x"></i>
+                        </div>
+                        <h2 class="Arabule2" id="Arabulue">Arabuleu - Yazılım Şirketi</h2>
+                        <li class="list" id="workDone1">Fronted Developer staj eğitimi yapıyorum.</li>
+                        <li class="list" id="workDone2">HTML5, CSS3, JavaScprit, React projeleri üzerinde çalışmaktayım.
+                        </li>
+                    </div>
+                </div>
                 <div class="projectContainer">
                     <div class="project1">
                         <div class="textLogo">
-                            <h2 class="project">PROJELER</h2>
+                            <h2 class="project" id="projects">PROJELER</h2>
                             <i class="fa-solid fa-laptop-code fa-2x"></i>
                         </div>
-                        <h2 class="boostrap">Boostrap Website Projesi</h2>
-                        <li class="list">Galeri sayfası yapılmıştır.</li>
-                        <li class="list">İletişim sayfasında form doldurma bölümü yapılmıştır.</li>
-                        <li class="list">Boostrap kütüphanesinden yararlanmıştır.</li>
+                        <h2 class="boostrap" id="boostrapProjects">Boostrap Website Projesi</h2>
+                        <li class="list" id="process1">Galeri sayfası yapılmıştır.</li>
+                        <li class="list" id="process2">İletişim sayfasında form doldurma bölümü yapılmıştır.</li>
+                        <li class="list" id="process3">Boostrap kütüphanesinden yararlanmıştır.</li>
                         <li class="list">
-                            <a href="https://github.com/mucahidoguz/Bootstrap-Website.git" target="_blank">Detay için
-                                tıklayınız.</a>
+                            <a href="https://github.com/mucahidoguz/Bootstrap-Website.git" target="_blank"
+                                id="detail">Detaylı bilgi için lütfen tıklayınız.</a>
                         </li>
                     </div>
 
                     <div class="project2">
                         <h2 class="tokat">Mix Blend Website</h2>
-                        <li class="list">mix-blend-mode kullanılarak resim içine video yerleştirilmiştir. </li>
-                        <li class="list"></li>
-                        <li class="list"></li>
+                        <li class="list" id="process4">Mix-blend-mode kullanılarak resim içine video yerleştirilmiştir.
+                        </li>
+                        <li class="list" id="process5">Tokat ilimiz ile ilgili kısa bir tanıtım demosudur.</li>
+                        <li class="list" id="process6">HTML5 ve CSS3 özellikleri kullanılarak oluşturulmuştur.</li>
+                        <li class="list" id="process7">Font Awesome kütüphanesinden yararlanılmıştır.</li>
                         <li class="list">
-                            <a href="https://github.com/mucahidoguz/Tokat.git" target="_blank">Detay için
-                                tıklayınız.</a>
+                            <a href="https://github.com/mucahidoguz/Tokat.git" target="_blank" id="detail">Detaylı bilgi
+                                için lütfen tıklayınız.</a>
                         </li>
                     </div>
 
                     <div class="project3">
                         <h2 class="jsexample">JavaScprit Example</h2>
-                        <li class="list">JavaScprit ile arka plan rengi değiştirme uyguladı. </li>
-                        <li class="list">Analog saat yapılarak çalışır hale getirildi.</li>
+                        <li class="list" id="process8">JavaScprit ile arka plan rengi değiştirme uyguladı.</li>
+                        <li class="list" id="process9">Analog saat yapılarak çalışır hale getirildi.</li>
+                        <li class="list" id="process10">Axios kütüphanesinden yararlanılmıştır.</li>
                         <li class="list">
-                            <a href="https://github.com/mucahidoguz/JS-project.git" target="_blank">Detay için
-                                tıklayınız.</a>
+                            <a href="https://github.com/mucahidoguz/JS-project.git" target="_blank" id="detail">Detaylı
+                                bilgi
+                                için lütfen tıklayınız.</a>
                         </li>
                     </div>
                 </div>
-
-
             </div>
-
         </div>
-
-
     </div>
+    <script src="add.js"></script>
 </body>
 
 </html>
